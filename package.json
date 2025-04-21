@@ -9,17 +9,42 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.2.1",
+    "@reduxjs/toolkit": "^2.6.1",
+    "@tabler/icons-react": "^3.31.0",
+    "@types/lodash": "^4.17.16",
+    "@types/swiper": "^5.4.3",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "bootstrap": "^5.3.5",
+    "date-fns": "^4.1.0",
+    "firebase": "^11.6.0",
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
+    "next": "15.2.4",
+    "npm": "^11.2.0",
     "react": "^19.0.0",
+    "react-datepicker": "^8.3.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "react-dropzone": "^14.3.8",
+    "react-hot-toast": "^2.5.2",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5",
+    "sharp": "^0.34.0",
+    "swiper": "^11.2.6",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20.17.30",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "@types/react-dom": "^19.1.1",
+    "eslint": "^9.24.0",
+    "eslint-config-next": "^15.2.4",
+    "sass": "^1.86.3",
+    "typescript": "^5.8.3"
   }
 }

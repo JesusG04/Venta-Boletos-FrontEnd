@@ -1,0 +1,59 @@
+
+/*CSS Table Of Content Ends Here*/
+// bootstrap
+// -- Audio
+@use "audio/audioplayer";
+
+//--Abstracts--//
+@use "abstracts" as *;
+//--Abstracts--//
+
+//--Base--//
+@use "base";
+//--Base--//
+
+//--Layout--//
+@use "layout";
+//--Layout--//
+
+//--Components--//
+@use "components";
+//--Components--//
+
+@font-face {
+  font-family: "borda";
+  src: 
+    url("../../../public/fonts/bordafont/Borda.ttf") format("truetype"),
+    url("../../../public/fonts/bordafont/Borda Bold.ttf") format("truetype"),
+    url("../../../public/fonts/bordafont/Borda DemiBold.ttf") format("truetype"),
+    url("../../../public/fonts/bordafont/Borda ExtraBold.ttf") format("truetype"),
+    url("../../../public/fonts/bordafont/Borda Light.ttf") format("truetype"),
+    url("../../../public/fonts/bordafont/Borda Medium.ttf") format("truetype");
+}
+/*CSS Table Of Content Starts Here*/
+
+/*============================================ 
+# Template Name: Streamio
+# Version: 1.0
+# Date: 10/10/2023
+# Author: pixelaxis
+# Author URI: https://themeforest.net/user/pixelaxis
+# Description: Streamio - Nextjs Templates
+============================================*/
+
+/*======== scss compiles =========
+# mixin
+# variables
+# Typography
+# button 
+# animation
+# banner
+# blog
+# header
+# section
+# footer
+============================================*/
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+  display: none;
+}

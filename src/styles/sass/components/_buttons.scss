@@ -1,0 +1,130 @@
+@use '../abstracts' as m;
+@use 'sass:color';
+$bgsection: #070707;
+$base: #59FF00;
+/*--Button Area Start--*/
+.cmn--btn {
+	padding: 13px 32px 14px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 130%;
+	display: inline-block;
+	text-transform: capitalize;
+	position: relative;
+	background: var(--base);
+	overflow: hidden;
+	gap: 12px;
+	color: var(--white);
+	@include m.bodyfont;
+	transform: skewX(15deg);
+	span{
+		position: relative;
+		z-index: 1;
+		transition: all 0.5s;
+		display: block;
+		transform: skewX(-15deg);
+		letter-spacing: 1px;
+	}
+	&::before{
+		position: absolute;
+		content: "";
+		right: 0;
+		top: 0;
+		width: 0px;
+		height: 0px;
+		background: var(--hover);
+		transition: all 0.5s;
+		background: var(--success2);
+	}
+	
+	&:hover{
+		color: var(--white);
+		&::before{
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+	@include m.breakpoint(max-md){
+		padding: 10px 20px 10px;
+	}
+	@include m.breakpoint(max-xs){
+		padding: 8px 20px 8px;
+		font-size: 14px;
+	}
+}
+.cmn--btntwo{
+	background: #232627;
+	&::before{
+		bottom: 0;
+		left: 0;
+	}
+}
+.outline__btn{
+	background: transparent;
+	border: 1px solid var(--base);
+	padding: 11px 25px 13px;
+	span{
+		color: var(--base);
+	}
+	&:hover{
+		span{
+			color: var(--title);
+		}
+	}
+}
+
+.cmbtn{
+	padding: 8px 16px;
+	background: var(--viewbox);
+	font-weight: 500;
+	@include m.bodyfont;
+	color: var(--white);
+	align-items: center;
+}
+.cmn__simple{
+	padding: 12px 40px;
+	background: var(--base);
+	font-size: 18px;
+	font-weight: 500;
+	@include m.bodyfont;
+	color: var(--white);
+}
+.cmn__simple2{
+	padding: 12px 32px 15px;
+	background: var(--cmnbox);
+	font-size: 18px;
+	font-weight: 500;
+	@include m.bodyfont;
+	color: var(--white);
+	transition: all 0.4s;
+	&:hover{
+		background: var(--base);
+	}
+}
+
+.btn-inciar{
+	background: transparent;
+	color: var(--pra);
+	font-weight: bold;
+	border: 1px solid var(--white);
+	padding: .5rem;
+	transition: all ease .3s;
+	&:hover{
+		background-color: color.adjust($bgsection, $lightness: 15%);
+		border-radius: .5rem;
+	}
+}
+.btn-registrarse {
+	background-color: var(--base);
+	color: var(--white);
+	font-weight: bold;
+	border: 1px solid var(--base);
+	padding: .5rem;
+	transition: all ease .3s;
+	&:hover{
+		background-color: color.adjust($base, $lightness: -10%);
+		border-radius: .5rem;
+	}
+}
+/*--Button Area End--*/

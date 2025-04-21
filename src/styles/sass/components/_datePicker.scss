@@ -1,0 +1,11 @@
+.react-datepicker__input-container input {
+    width: 100%;
+    padding: 8px; /* Ajusta según tu diseño */
+    border: 1px solid #ccc; /* Personaliza el borde */
+    border-radius: 4px; /* Personaliza el borde si es necesario */
+    box-sizing: border-box; /* Asegúrate de que el padding no afecte el ancho */
+  }
+
+  .react-datepicker-wrapper{
+    width: 100%;
+  }
