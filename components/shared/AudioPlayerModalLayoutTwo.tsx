@@ -2,7 +2,7 @@
 import { RootState } from "../../redux/store";
 import Image from "next/image";
 import { useSelector } from "react-redux";
-import ModalAudioPlayer from "../pages/explore/ModalAudioPlayer";
+// import ModalAudioPlayer from "/pages/explore/ModalAudioPlayer";
 
 const AudioPlayerModalLayoutTwo = () => {
   const modalOpen = useSelector((state: RootState) => state.customModal);
@@ -19,7 +19,7 @@ const AudioPlayerModalLayoutTwo = () => {
           />
           <span className="fs-16 fw-500 bodyfont">Rocky Pub</span>
         </div>
-        <ModalAudioPlayer />
+        {/* <ModalAudioPlayer /> */}
       </div>
     </div>
   );
