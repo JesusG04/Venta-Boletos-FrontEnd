@@ -13,7 +13,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useSelector } from "react-redux";
 import useAuth from "@/hooks/useAuth";
 import { signOut } from "firebase/auth";

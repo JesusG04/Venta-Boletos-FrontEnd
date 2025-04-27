@@ -1,7 +1,7 @@
 "use client";
 import useAudioPlayer from "../../hooks/useAudioPlayer";
 // import { handleLinkClick } from "@/utils/handleLinkClick";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
 
 const AudioPlayer = ({ audio = "../audio/audio.mp3" }: { audio?: string }) => {
@@ -12,13 +12,13 @@ const AudioPlayer = ({ audio = "../audio/audio.mp3" }: { audio?: string }) => {
     progress,
     duration,
     currentTime,
-    isSeeking,
+    // isSeeking,
     handlePlayToggle,
     handleProgress,
-    setPlayToggle,
-    seekToTime,
-    handleFastReverse,
-    handleFastForward,
+    // setPlayToggle,
+    // seekToTime,
+    // handleFastReverse,
+    // handleFastForward,
     handleProgressBarMouseDown,
     handleProgressBarMouseUp,
     handleProgressBarInteraction,

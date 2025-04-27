@@ -9,6 +9,7 @@ import {
 import { useDropzone } from 'react-dropzone'
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { FormRegisterSchema } from "@/src/schemas";
 import { updateDataRegister } from "@/actions/register-data-action";
 import { storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, auth } from "@/src/firebase/firebaseConfig";
@@ -182,7 +183,7 @@ const FormDataUser = () => {
         <div className="col-lg-12">
           <div className="d-flex flex-column align-items-center">
 
-            <img
+            <Image 
               src={imgPerfil || 'https://firebasestorage.googleapis.com/v0/b/apphive-inc.appspot.com/o/usersmedia%2FsG4D2Am3Nq6G4diGKs6ojn?alt=media&token=3fabd5b9-9af8-4e34-bc4e-7e1aad99df1e'}
               alt="Img de Perfil"
               className="rounded-circle dropzone-img object-fit-cover"
