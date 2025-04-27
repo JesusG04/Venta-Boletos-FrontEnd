@@ -1,4 +1,4 @@
-import { songUpgradeData } from "@/../public/data/songUpgrdeData";
+import { songUpgradeData } from "@/public/data/songUpgrdeData";
 import { IconClockHour3 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";

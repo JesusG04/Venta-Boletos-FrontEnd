@@ -1,4 +1,4 @@
-import { trendingsliderData } from "@/../public/data/trendingSliderData";
+import { trendingsliderData } from "@/public/data/trendingSliderData";
 import LoadMore from "../../shared/LoadMore";
 import SelectBox from "../../shared/SelectBox";
 import { IconSearch } from "@tabler/icons-react";
@@ -90,10 +90,10 @@ const TrendingSection = () => {
             aria-labelledby="home-tab"
           >
             <div className="row g-4">
-              {trendingsliderData.slice(0, 8).map(({ id, ...props }) => (
-                <TrendingCard key={id} {...props} />
+              {/* {trendingsliderData.slice(0, 8).map(({ id, ...props }) => (
+                // <TrendingCard key={id} {...props} />
               ))}
-              <LoadMore />
+              <LoadMore /> */}
             </div>
           </div>
           <div
@@ -103,9 +103,9 @@ const TrendingSection = () => {
             aria-labelledby="profile-tab"
           >
             <div className="row g-4">
-              {trendingsliderData.slice(3).map(({ id, ...props }) => (
-                <TrendingCard key={id} {...props} />
-              ))}
+              {/* {trendingsliderData.slice(3).map(({ id, ...props }) => (
+                // <TrendingCard key={id} {...props} />
+              ))} */}
               <LoadMore />
             </div>
           </div>
@@ -116,9 +116,9 @@ const TrendingSection = () => {
             aria-labelledby="contact-tab"
           >
             <div className="row g-4">
-              {trendingsliderData.slice(4, 8).map(({ id, ...props }) => (
-                <TrendingCard key={id} {...props} />
-              ))}
+              {/* {trendingsliderData.slice(4, 8).map(({ id, ...props }) => (
+                // <TrendingCard key={id} {...props} />
+              ))} */}
               <LoadMore />
             </div>
           </div>
