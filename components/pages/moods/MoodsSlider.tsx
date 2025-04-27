@@ -1,8 +1,8 @@
 "use client";
 
-import { moodsCardData } from "@/../public/data/moodsCardData";
-import LoadMore from "../../shared/LoadMore";
-import ViewAll from "../../shared/ViewAll";
+import { moodsCardData } from "@/public/data/moodsCardData";
+import LoadMore from "@/components/shared/LoadMore";
+import ViewAll from "@/components/shared/ViewAll";
 import MoodsCard from "../home/MoodsCard";
 
 //@ts-ignore

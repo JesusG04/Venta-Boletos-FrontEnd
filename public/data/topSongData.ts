@@ -1,9 +1,9 @@
-import image1 from "@/../public/img/hotsong/t1.jpg";
-import image2 from "@/../public/img/hotsong/t2.jpg";
-import image3 from "@/../public/img/hotsong/t3.jpg";
-import image4 from "@/../public/img/hotsong/t4.jpg";
-import image5 from "@/../public/img/hotsong/t5.jpg";
-import image6 from "@/../public/img/hotsong/t6.jpg";
+import image1 from "@/public/img/hotsong/t1.jpg";
+import image2 from "@/public/img/hotsong/t2.jpg";
+import image3 from "@/public/img/hotsong/t3.jpg";
+import image4 from "@/public/img/hotsong/t4.jpg";
+import image5 from "@/public/img/hotsong/t5.jpg";
+import image6 from "@/public/img/hotsong/t6.jpg";
 import { v4 as uuidv4 } from "uuid";
 export const topSongData = [
   {

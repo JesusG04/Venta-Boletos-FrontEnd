@@ -1,5 +1,5 @@
 "use client";
-import { genresAllSongsSliderData } from "@/../public/data/genresAllSongsSliderData";
+import { genresAllSongsSliderData } from "@/public/data/genresAllSongsSliderData";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 //@ts-ignore

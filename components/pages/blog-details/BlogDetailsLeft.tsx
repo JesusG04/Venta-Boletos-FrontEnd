@@ -1,5 +1,5 @@
 "use client";
-import { handleLinkClick } from "@/utils/handleLinkClick";
+// import { handleLinkClick } from "@/utils/handleLinkClick";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -13,6 +13,11 @@ import Link from "next/link";
 import BlogDetailsThumb from "./BlogDetailsThumb";
 
 const BlogDetailsLeft = () => {
+  const handleLinkClick = () =>{
+    console.log("Presionaste un boton");
+    
+  }
+
   return (
     <div className="col-lg-8">
       <div className="blog__leftwrap">

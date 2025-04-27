@@ -1,6 +1,6 @@
 "use client";
-import { addToCart } from "../../../redux/features/cart-slich";
-import { handleLinkClick } from "@/utils/handleLinkClick";
+import { addToCart } from "@/redux/features/cart-slich";
+import { handleLinkClick } from "@/src/utils/handleLinkClick";
 import { IconShoppingCartPlus } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";

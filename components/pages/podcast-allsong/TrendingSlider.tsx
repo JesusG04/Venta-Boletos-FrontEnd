@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 //@ts-ignore
-import { moreEpisodesData } from "@/../public/data/moreEpicodesData";
+import { moreEpisodesData } from "@/public/data/moreEpicodesData";
 import {
   IconArrowNarrowRight,
   IconChevronLeft,
