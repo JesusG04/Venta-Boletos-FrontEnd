@@ -4,7 +4,6 @@ import { songUpgradeData } from "@/public/data/songUpgrdeData";
 import { weeklytopTrackData } from "@/public/data/weeklyTopTracksData";
 import {
   IconGenderFemale,
-  IconPlaylistOff,
   IconShare3,
   IconPhone,
   IconMail,
@@ -14,9 +13,6 @@ import {
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import SongUpgradeTableRow from "../album-allsong/SongUpgradeTableRow";
-import ExploreSectionTableRow from "../explore/ExploreSectionTableRow";
-import WeeklyTopTrack from "../explore/WeeklyTopTrack";
 import useAuth from "@/hooks/useAuth";
 
 const ProfileSection = () => {
@@ -167,13 +163,13 @@ const ProfileSection = () => {
                       <div className="latest__songwrap moods__allsong">
                         <table className="table ctablemy align-middle align-center w-100">
                           <tbody>
-                            {exploreSectionData.map(({ id, ...props }, index) => (
+                            {/* {exploreSectionData.map(({ id, ...props }, index) => (
                               <ExploreSectionTableRow
                                 key={id}
                                 {...props}
                                 index={index}
                               />
-                            ))}
+                            ))} */}
                           </tbody>
                         </table>
                       </div>
@@ -190,9 +186,9 @@ const ProfileSection = () => {
                     <div className="weekly__tracks">
                       <h3 className="mb-24 white">Weekly Top Tracks</h3>
                       <ul className="weeklytop__tracks">
-                        {weeklytopTrackData.map(({ id, ...props }) => (
+                        {/* {weeklytopTrackData.map(({ id, ...props }) => (
                           <WeeklyTopTrack key={id} {...props} />
-                        ))}
+                        ))} */}
                       </ul>
                     </div>
                   </div>
