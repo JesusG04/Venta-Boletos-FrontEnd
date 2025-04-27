@@ -1,5 +1,5 @@
-import { exploreSectionData } from "@/../public/data/exploreSectionData";
-import { weeklytopTrackData } from "@/../public/data/weeklyTopTracksData";
+import { exploreSectionData } from "@/public/data/exploreSectionData";
+import { weeklytopTrackData } from "@/public/data/weeklyTopTracksData";
 import { IconPlus } from "@tabler/icons-react";
 import Image from "next/image";
 import ExploreSectionTableRow from "./ExploreSectionTableRow";

@@ -1,4 +1,4 @@
-import { topSongData } from "@/../public/data/topSongData";
+import { topSongData } from "@/public/data/topSongData";
 import MoodsCard from "../home/MoodsCard";
 
 const TopSinger = () => {

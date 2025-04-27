@@ -1,6 +1,6 @@
 "use client";
-import AudioPlayer from "../../shared/AudioPlayer";
-import LikeAndDisLikeBtn from "../../shared/LikeAndDisLikeBtn";
+import AudioPlayer from "@/components/shared/AudioPlayer";
+import LikeAndDisLikeBtn from "@/components/shared/LikeAndDisLikeBtn";
 import { IconShare, IconShare3 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";

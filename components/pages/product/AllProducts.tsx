@@ -1,4 +1,4 @@
-import { productData } from "@/../public/data/productDta";
+import { productData } from "@/public/data/productDta";
 import SelectBox from "../../shared/SelectBox";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";

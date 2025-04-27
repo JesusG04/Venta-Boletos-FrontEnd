@@ -1,4 +1,4 @@
-import { genresAllSongsSliderData } from "@/../public/data/genresAllSongsSliderData";
+import { genresAllSongsSliderData } from "@/public/data/genresAllSongsSliderData";
 import LoadMore from "../../shared/LoadMore";
 import ViewAll from "../../shared/ViewAll";
 import GenresSliderCard from "../genres-allsong/GenresSliderCard";

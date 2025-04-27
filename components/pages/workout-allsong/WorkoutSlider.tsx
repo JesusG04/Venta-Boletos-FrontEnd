@@ -1,6 +1,6 @@
 "use client";
 //@ts-ignore
-import { workoutCardData } from "@/../public/data/workoutData";
+import { workoutCardData } from "@/public/data/workoutData";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 //@ts-ignore

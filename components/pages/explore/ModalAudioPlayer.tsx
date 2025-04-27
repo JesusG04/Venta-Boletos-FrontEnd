@@ -3,7 +3,7 @@ import useAudioPlayer from "../../../hooks/useAudioPlayer";
 import { setCustomModal } from "../../../redux/features/modalSlice";
 import { setTrack } from "../../../redux/features/trackSlice";
 import { RootState } from "../../../redux/store";
-import { handleLinkClick } from "@/utils/handleLinkClick";
+import { handleLinkClick } from "@/src/utils/handleLinkClick";
 import {
   IconMultiplier1x,
   IconPlayerPauseFilled,

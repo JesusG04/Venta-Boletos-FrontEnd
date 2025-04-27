@@ -1,4 +1,4 @@
-import { topSongData } from "@/../public/data/topSongData";
+import { topSongData } from "@/public/data/topSongData";
 import SelectBox from "../../shared/SelectBox";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";

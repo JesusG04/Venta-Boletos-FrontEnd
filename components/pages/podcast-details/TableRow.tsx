@@ -1,4 +1,4 @@
-import { songUpgradeData } from "@/../public/data/songUpgrdeData";
+import { songUpgradeData } from "@/public/data/songUpgrdeData";
 import SongUpgradeTableRow from "../album-allsong/SongUpgradeTableRow";
 
 const TableRow = () => {

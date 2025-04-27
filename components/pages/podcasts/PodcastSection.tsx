@@ -1,4 +1,4 @@
-import { podCastData } from "@/../public/data/podCastData";
+import { podCastData } from "@/public/data/podCastData";
 import SelectBox from "../../shared/SelectBox";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
