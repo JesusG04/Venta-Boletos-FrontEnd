@@ -22,8 +22,8 @@ import { AuthProvider } from "@/context/AuthProvider";
 
 export const metadata: Metadata = {
   title:
-    "Niteo",
-  description: "Streamio Multipurpose Audio Podcast & Music Nextjs Template",
+    "Electro Culture",
+  description: "Electro Culture eventos, restaurantes, boletos",
 };
 
 export default function RootLayout({

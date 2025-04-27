@@ -1,13 +1,13 @@
-import image1 from "@/../public/img/details/ug1.jpg";
-import image10 from "@/../public/img/details/ug10.jpg";
-import image2 from "@/../public/img/details/ug2.jpg";
-import image3 from "@/../public/img/details/ug3.jpg";
-import image4 from "@/../public/img/details/ug4.jpg";
-import image5 from "@/../public/img/details/ug5.jpg";
-import image6 from "@/../public/img/details/ug6.jpg";
-import image7 from "@/../public/img/details/ug7.jpg";
-import image8 from "@/../public/img/details/ug8.jpg";
-import image9 from "@/../public/img/details/ug9.jpg";
+import image1 from "@/public/img/details/ug1.jpg";
+import image10 from "@/public/img/details/ug10.jpg";
+import image2 from "@/public/img/details/ug2.jpg";
+import image3 from "@/public/img/details/ug3.jpg";
+import image4 from "@/public/img/details/ug4.jpg";
+import image5 from "@/public/img/details/ug5.jpg";
+import image6 from "@/public/img/details/ug6.jpg";
+import image7 from "@/public/img/details/ug7.jpg";
+import image8 from "@/public/img/details/ug8.jpg";
+import image9 from "@/public/img/details/ug9.jpg";
 import { v4 as uuidv4 } from "uuid";
 
 export const songUpgradeData = [

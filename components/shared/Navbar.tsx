@@ -1,5 +1,5 @@
 "use client";
-import { mainNavbarData, sideBarData } from "@/public/data/navBarData";
+import { sideBarData } from "@/public/data/navBarData";
 import { RootState } from "../../redux/store";
 import { handleLinkClick } from "@/src/utils/handleLinkClick";
 import { navbarContext } from "@/src/utils/reactContext";
@@ -7,9 +7,6 @@ import {
   IconBell,
   IconChecks,
   IconChevronDown,
-  IconDots,
-  IconMinus,
-  IconPlus,
   IconSearch,
   IconShoppingCart,
   IconX,
@@ -26,19 +23,20 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(navbarContext);
-  const [isSubDropDownOpen, setSubDropDownOpen] = useState(false);
+  // const [isSubDropDownOpen, setSubDropDownOpen] = useState(false);
   const [isSubMenuOpen, setSubMenuOpen] = useState<string | null>(
     sideBarData[0].id
   );
   const router = useRouter();
   const pathName = usePathname();
   const { quantity } = useSelector((state: RootState) => state.cart.value);
-  const { user } = useAuth();
+  const { user, setLoading, loading } = useAuth();
 
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      setLoading(!loading);
       router.push("/");
     } catch (error) {
       toast.error('Error Al cerrar sesión', {
@@ -72,7 +70,7 @@ const Navbar = () => {
                   <Image
                     width={180}
                     height={52}
-                    src="/img/logo/logo.png"
+                    src="/img/electro/LogoElectro.jpg"
                     alt="img"
                   />
                 </Link>
@@ -83,69 +81,75 @@ const Navbar = () => {
                   <IconX />
                 </div>
               </div>
+              
+              {/* Menu movil */}
               <div className="sidebar__wrapbox">
                 <ul className="sidebar__menu">
+                  
                   {/*==============side menu===== */}
                   {sideBarData.map(
-                    ({ id, menuTitle, icon, className, path, menuItems }) => {
-                      let isActive = menuItems?.some(
-                        (path) => pathName == path.dropDownPath
-                      );
-                      return menuItems ? (
-                        //Comprueba si el el link tiene elemento hijos
-                        <li key={id} className={`liclick ${className}`}>
-                          <span className="d-flex align-items-center">
-                            <Link
-                              onClick={() =>
-                                setSubMenuOpen((prev) =>
-                                  prev == id ? null : id
-                                )
-                              }
-                              href="#"
-                              className={`mclick d-flex hcolor align-items-center w-100 justify-content-between ${isActive ? "navbar-item-active" : ""
-                                }`}
-                            >
-                              <span className="d-flex click__title fs-16 bodyfont d-flex align-items-center gap-2">
-                                {icon}
-                                {menuTitle}
-                              </span>
-                              <span className="d-flex click__title align-items-center">
-                                {isSubMenuOpen == id ? (
-                                  <IconMinus />
-                                ) : (
-                                  <IconPlus />
-                                )}
-                              </span>
-                            </Link>
-                          </span>
-                          <div
-                            className={` menucontent menucontent-show ${isSubMenuOpen == id ? "active" : ""
-                              }`}
-                          >
-                            <ul>
-                              {menuItems.map(({ id, title, dropDownPath }) => {
-                                return (
-                                  <li
-                                    key={id}
-                                    onClick={() => setIsSidebarOpen(false)}
-                                  >
-                                    <Link
-                                      className={`${pathName === dropDownPath
-                                        ? "navbar-item-active"
-                                        : ""
-                                        }`}
-                                      href={dropDownPath}
-                                    >
-                                      {title}
-                                    </Link>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          </div>
-                        </li>
+                    ({ id, menuTitle, icon, path }) => {
 
-                      ) : (
+                      // let isActive = menuItems?.some(
+                      //   (path) => pathName == path.dropDownPath
+                      // );
+                      // return menuItems ? (
+                      //   //Comprueba si el el link tiene elemento hijos
+                      //   <li key={id} className={`liclick ${className}`}>
+                      //     <span className="d-flex align-items-center">
+                      //       <Link
+                      //         onClick={() =>
+                      //           setSubMenuOpen((prev) =>
+                      //             prev == id ? null : id
+                      //           )
+                      //         }
+                      //         href="#"
+                      //         className={`mclick d-flex hcolor align-items-center w-100 justify-content-between ${isActive ? "navbar-item-active" : ""
+                      //           }`}
+                      //       >
+                      //         <span className="d-flex click__title fs-16 bodyfont d-flex align-items-center gap-2">
+                      //           {icon}
+                      //           {menuTitle}
+                      //         </span>
+                      //         <span className="d-flex click__title align-items-center">
+                      //           {isSubMenuOpen == id ? (
+                      //             <IconMinus />
+                      //           ) : (
+                      //             <IconPlus />
+                      //           )}
+                      //         </span>
+                      //       </Link>
+                      //     </span>
+                      //     <div
+                      //       className={` menucontent menucontent-show ${isSubMenuOpen == id ? "active" : ""
+                      //         }`}
+                      //     >
+                      //       <ul>
+                      //         {menuItems.map(({ id, title, dropDownPath }) => {
+                      //           return (
+                      //             <li
+                      //               key={id}
+                      //               onClick={() => setIsSidebarOpen(false)}
+                      //             >
+                      //               <Link
+                      //                 className={`${pathName === dropDownPath
+                      //                   ? "navbar-item-active"
+                      //                   : ""
+                      //                   }`}
+                      //                 href={dropDownPath}
+                      //               >
+                      //                 {title}
+                      //               </Link>
+                      //             </li>
+                      //           );
+                      //         })}
+                      //       </ul>
+                      //     </div>
+                      //   </li>
+
+                      // ) : 
+
+                      return(
 
                         <li key={id} onClick={() => setIsSidebarOpen(false)}>
                           <Link
@@ -164,6 +168,8 @@ const Navbar = () => {
                   )}
                 </ul>
               </div>
+
+              
             </div>
 
 
@@ -180,7 +186,7 @@ const Navbar = () => {
                     <Image
                       width={68}
                       height={51}
-                      src="/img/logo/favicon-small.png"
+                      src="/img/electro/LogoElectro.jpg"
                       alt="img"
                     />
                   </Link>
@@ -192,14 +198,14 @@ const Navbar = () => {
                     </button>
                     <input
                       type="text"
-                      placeholder="Search songs, podcasts, albums..."
+                      placeholder="Buscar eventos, restaurantes..."
                       suppressHydrationWarning
                     />
                   </form>
                 </li>
 
                 {/*Main menu */}
-                {mainNavbarData.map(
+                {/* {mainNavbarData.map(
                   ({ id, menuTitle, icon, path, menuItems }) => {
                     return menuItems ? (
 
@@ -266,10 +272,11 @@ const Navbar = () => {
                       </li>
                     );
                   }
-                )}
+                )} */}
 
 
               </ul>
+
               <div className="menu__right__components d-flex align-items-center">
                 <div className="menu__components d-flex align-items-center">
 
@@ -281,7 +288,6 @@ const Navbar = () => {
 
 
                   {/**Barra del nombre con un submenu poner logica en caso de que no haya inciaco sesion */}
-
                   {user ? (
 
                     <div className="dropdown profie__dropdown">
@@ -359,7 +365,7 @@ const Navbar = () => {
                                 <i className="bi bi-bell fs-20"></i>
                                 <span className="d-block fs-16 pra fw-500 ">
                                   {" "}
-                                  Events{" "}
+                                  Eventos{" "}
                                 </span>
                               </Link>
                             </li>

@@ -3,22 +3,29 @@
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import useAuth from "@/hooks/useAuth"
-import { User } from "firebase/auth"
 
 const PublicRouter = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter();
     const { user, loading } = useAuth();
 
-    console.log(user);
-
     useEffect(() => {
-        if (!loading && user) {
-            router.push('/');
-          }
+
+        const checkUser = async () => {
+            if (user && !loading) {
+
+                const idTokenResult = await user.getIdTokenResult();
+                const customClaim = idTokenResult.claims.registrado;
+
+                if (customClaim) {
+                    router.push('/');
+                }
+                
+            } else {
+                router.push('/');
+            }
+        }
+        checkUser();
     }, [user, loading]);
-
-
     return <>{children}</>;
-
 }
 export default PublicRouter

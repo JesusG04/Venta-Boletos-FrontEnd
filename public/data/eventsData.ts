@@ -9,7 +9,10 @@ import image6 from "@/public/img/mood/artist6.jpg";
 import image7 from "@/public/img/mood/artist7.jpg";
 import image8 from "@/public/img/mood/artist8.jpg";
 
-export const artistCardData = [
+console.log('Consultado los eventos');
+
+
+export const eventsCardData = [
   {
     id: uuidv4(),
     image: image1,

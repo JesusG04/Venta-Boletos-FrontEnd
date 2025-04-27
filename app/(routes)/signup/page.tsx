@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 const signUp = () => {
   return (
     <>
-      <BreadCrumSingle page="Sign up" />
-      <SignUpForm />
+      
+        <BreadCrumSingle page="Sign up" />
+        <SignUpForm />
+      
     </>
   );
 };

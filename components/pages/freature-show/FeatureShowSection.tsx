@@ -1,6 +1,6 @@
 import { featureShowData } from "@/../public/data/featureShowData";
 import Link from "next/link";
-import FeatureShowLeftCard from "../home/FeatureShowLeftCard";
+import FeatureShowLeftCard from "../home/events/FeatureEventLeftCard";
 
 const FeatureShowSection = () => {
   return (

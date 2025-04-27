@@ -1,5 +1,5 @@
 import PopularArtists from "../../../components/pages/artists/PopularArtists";
-import FeaturedShows from "../../../components/pages/home/FeaturedShows";
+import FeaturedShows from "../../../components/pages/home/events/FeaturedEvents";
 import BreadCrumb from "../../../components/shared/BreadCrum";
 import { Metadata } from "next";
 

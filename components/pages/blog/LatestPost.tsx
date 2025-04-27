@@ -1,6 +1,6 @@
 import { latestPostData } from "@/../public/data/latestPostData";
 import Link from "next/link";
-import LatestPostCard from "../home/LatestPostCard";
+import LatestPostCard from "../home/events/LatestEventsCard";
 
 const LatestPost = () => {
   return (

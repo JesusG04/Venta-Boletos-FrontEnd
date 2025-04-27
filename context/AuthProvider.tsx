@@ -7,12 +7,14 @@ interface AuthContextType {
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
   loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
   setUser: () => {},
   loading: true,
+  setLoading: () => {},
 });
 
 
@@ -25,7 +27,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setPersistence(auth, browserLocalPersistence).then(() => {
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
-        setLoading(false); 
+        setLoading(false);
       });
 
       // Limpiar listener al desmontar
@@ -38,7 +40,8 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       value={{
         user,
         setUser,
-        loading
+        loading,
+        setLoading,
       }}
     >
           {children}
@@ -49,45 +52,4 @@ export {
   AuthProvider
 }
 export default AuthContext
-
-
-
-
-
-
-
-
-// function AuthProvide1r({ children }: { children: React.ReactNode }) {
-//   const [user, setUser] = useState<User | null>(null);
-//   const [loading, setLoading] = useState(true);
-
-//   const refreshAuth = () => {
-//     setUser(auth.currentUser); // Fuerza actualización
-//   };
-
-
-//   useEffect(() => {
-//     // 1. Configura persistencia de sesión
-//     setPersistence(auth, browserLocalPersistence)
-//       .then(() => {
-//         // 2. Listener de cambios de autenticación
-//         const unsubscribe = onAuthStateChanged(auth, (user) => {
-//           console.log('Auth state changed:', user?.email); // Para debug
-//           setUser(user);
-//           setLoading(false);
-//         });
-
-//         return unsubscribe;
-//       })
-//       .catch((error) => {
-//         console.error('Error configuring persistence:', error);
-//       });
-//   }, []);
-
-//   return (
-//     <AuthContext.Provider value={{ user, loading, refreshAuth }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// }
 

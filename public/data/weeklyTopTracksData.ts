@@ -1,6 +1,6 @@
-import image1 from "@/../public/img/details/ttrack1.jpg";
-import image2 from "@/../public/img/details/ttrack2.jpg";
-import image3 from "@/../public/img/details/ttrack3.jpg";
+import image1 from "@/public/img/details/ttrack1.jpg";
+import image2 from "@/public/img/details/ttrack2.jpg";
+import image3 from "@/public/img/details/ttrack3.jpg";
 import { v4 as uuidv4 } from "uuid";
 
 export const weeklytopTrackData = [

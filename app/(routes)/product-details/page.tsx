@@ -1,4 +1,4 @@
-import { productData } from "@/../public/data/productDta";
+import { productData } from "@/public/data/productDta";
 import Product from "../../../components/pages/home/Product";
 import ProductDetailsSection from "../../../components/pages/product-details/ProductDetailsSection";
 import { Metadata } from "next";

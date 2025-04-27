@@ -1,5 +1,5 @@
 "use client";
-import { artistCardData } from "@/public/data/artistsCardData";
+import { eventsCardData } from "@/public/data/eventsData";
 import {
   IconArrowNarrowRight,
   IconChevronLeft,
@@ -9,8 +9,16 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 //@ts-ignore
 import { Navigation, Scrollbar } from "swiper/modules";
-import ArtistsSliderCard from "./ArtistsSliderCard";
-const Artists = () => {
+import EventsSliderCard from "./EventsSliderCard";
+import { MapaEventos, EventMapSchema } from "@/src/schemas";
+
+
+interface Props {
+  data: MapaEventos;
+}
+
+const Events = ({ data }: Props) => {
+
   return (
     // <!--artits section-->
     <section className="artits__section ralt pr-24 pl-24 pb-100 pt-5">
@@ -21,7 +29,7 @@ const Artists = () => {
             href="artist-allsong"
             className="view__btn white d-flex align-items-center gap-2"
           >
-            Ver todos
+            Ver más
             <IconArrowNarrowRight />
           </Link>
         </div>
@@ -64,11 +72,14 @@ const Artists = () => {
           className="swiper trending__slider"
         >
           <div className="swiper-wrapper">
-            {artistCardData.map(({ id, ...props }) => (
-              <SwiperSlide key={id}>
-                <ArtistsSliderCard {...props} />
-              </SwiperSlide>
-            ))}
+            {Object.entries(data).map((entry) => {
+              const [id, evento] = entry;
+              return (
+                <SwiperSlide key={id}>
+                  <EventsSliderCard {...evento} />
+                </SwiperSlide>
+              );
+            })}
           </div>
           <div className="d-flex gap-4 mt-40 align-items-center">
             <div className="gap-1 d-flex">
@@ -88,4 +99,4 @@ const Artists = () => {
   );
 };
 
-export default Artists;
+export default Events;

@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
   },
   images: {
     domains: ['localhost', 'storage.googleapis.com'], // Permite estos dominios
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
+        port: '9199', // especifica el puerto si es necesario
+        pathname: '/**',
+      },
+    ],
   },
 };
 

@@ -18,6 +18,7 @@ const RegisterForm = () => {
     errors: [],
     success: false
   });
+  
   const [formData, setFormData] = useState({
     email: '',
     name: '',

@@ -1,21 +1,16 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { Evento } from "@/src/schemas";
 
-type Props = {
-  image: StaticImageData;
-  title: string;
-  location: string;
-};
-
-const ArtistsSliderCard = ({ image, title, location }: Props) => {
+const EventsSliderCard = ({ bannerEvento, nombreEvento}: Evento) => {
   return (
     <div className="swiper-slide trending__item round16 p-8">
       <div className="thumb ralt overhid transition">
         <Image
-          src={image}
+          src={bannerEvento}
           width={390}
-          height={390}
+          height={370}
           className="transition h-auto"
           alt="img"
         />
@@ -23,10 +18,10 @@ const ArtistsSliderCard = ({ image, title, location }: Props) => {
           <div className="content">
             <h5 className="mb-1">
               <Link href="artist-allsong" className="white">
-                {title}
+                {nombreEvento}
               </Link>
             </h5>
-            <span className="fs-16 fw-500 pra3 d-block">{location}</span>
+            <span className="fs-16 fw-500 pra3 d-block">En el tenayo</span>
           </div>
           <Link href="artist-allsong" className="cmn__arrow">
             <IconArrowNarrowRight className="arrowrotate" />
@@ -37,4 +32,4 @@ const ArtistsSliderCard = ({ image, title, location }: Props) => {
   );
 };
 
-export default ArtistsSliderCard;
+export default EventsSliderCard;

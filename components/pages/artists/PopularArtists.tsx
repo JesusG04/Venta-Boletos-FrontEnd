@@ -2,7 +2,7 @@ import { artistCardData } from "@/../public/data/artistsCardData";
 import LoadMore from "../../shared/LoadMore";
 import SelectBox from "../../shared/SelectBox";
 import { IconSearch } from "@tabler/icons-react";
-import ArtistsSliderCard from "../home/ArtistsSliderCard";
+import ArtistsSliderCard from "../home/events/EventsSliderCard";
 
 const PopularArtists = () => {
   const artists = [

@@ -1,11 +1,8 @@
 import {
-  IconBrandDiscord,
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandTwitch,
-  IconBrandYoutube,
+  IconBrandTiktok
 } from "@tabler/icons-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -16,8 +13,8 @@ const Footer = () => {
         <div className="footer__top">
           <div className="row g-4">
 
-
-            <div className="col-md-4 col-sm-6 quick__space">
+            {/* Enlaces Rapidos */}
+            <div className="col-md-4 col-sm-12 quick__space">
 
               <div className="footer__widget">
 
@@ -80,41 +77,36 @@ const Footer = () => {
 
             </div>
 
-            <div className="col-lg-4 col-md-6 col-sm-6 footer__streamio">
+            {/* Redes sociales  */}
+            <div className="col-lg-4 col-md-6 col-sm-6 footercontact__link">
               <div className="footer__widget">
 
                 <h4 className="white mb-30 text-center">Redes Sociales</h4>
-                <ul className="social d-flex align-items-center text-white">
+
+                <ul className="social d-flex align-items-center justify-content-center text-white">
                   <li>
                     <Link href="#">
                       <IconBrandFacebook />
                     </Link>
                   </li>
-                  <li>
-                    <Link href="#">
-                      <IconBrandTwitch />
-                    </Link>
-                  </li>
+
                   <li>
                     <Link href="#">
                       <IconBrandInstagram />
                     </Link>
                   </li>
+
                   <li>
                     <Link href="#">
-                      <IconBrandDiscord />
+                      <IconBrandTiktok />
                     </Link>
                   </li>
-                  <li>
-                    <Link href="#">
-                      <IconBrandYoutube />
-                    </Link>
-                  </li>
+
                 </ul>
               </div>
             </div>
 
-
+            {/* Contacto */}
             <div className="col-md-4 col-sm-6 footercontact__link">
               <div className="footer__widget">
                 <h4 className="white mb-30">Contacto</h4>
@@ -145,7 +137,7 @@ const Footer = () => {
 
         <div className="footer__bottom d-flex align-items-center">
           <p className="pra fs-14 fw-400 bodyfont">
-          Copyright 2025 &copy; Niteo
+            Copyright 2025 &copy; Niteo
           </p>
           <ul className="privacy d-flex align-items-center gap-2">
             <li>
