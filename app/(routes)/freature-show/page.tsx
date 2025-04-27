@@ -1,5 +1,5 @@
-// import FeatureShowSection from "../../../components/pages/freature-show/FeatureShowSection";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+// import FeatureShowSection from "@/components/pages/freature-show/FeatureShowSection";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

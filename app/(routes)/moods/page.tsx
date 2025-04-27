@@ -1,5 +1,5 @@
-import MoodsSection from "../../../components/pages/moods/MoodsSlider";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import MoodsSection from "@/components/pages/moods/MoodsSlider";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,4 @@
-import ExploreSection from "../../../components/pages/explore/ExploreSection";
+import ExploreSection from "@/components/pages/explore/ExploreSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -13,7 +13,7 @@ const productDetails = () => {
   return (
     <>
       <ProductDetailsSection />
-      <Product sectionTitle="Related product" componentData={productData} />
+      {/* <Product sectionTitle="Related product" componentData={productData} /> */}
     </>
   );
 };

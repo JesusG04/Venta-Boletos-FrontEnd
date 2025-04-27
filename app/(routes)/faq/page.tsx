@@ -1,5 +1,5 @@
-import FaqSection from "../../../components/pages/faq/FaqSection";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import FaqSection from "@/components/pages/faq/FaqSection";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,4 @@
-import { songUpgradeData } from "@/../public/data/songUpgrdeData";
+import { songUpgradeData } from "@/public/data/songUpgrdeData";
 import SongUpgrade from "../../../components/pages/album-allsong/SongUpgrade";
 import PodcastAllSongSection from "../../../components/pages/podcast-allsong/PodcastAllSongSection";
 import Trending from "../../../components/pages/podcast-allsong/TrendingSlider";

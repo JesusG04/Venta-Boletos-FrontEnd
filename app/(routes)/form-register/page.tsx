@@ -1,5 +1,5 @@
 
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 import RegisterFormData from "@/components/pages/form-register/RegisterDataForm";
 import PublicRouter from "@/components/protected/PublicRouter";

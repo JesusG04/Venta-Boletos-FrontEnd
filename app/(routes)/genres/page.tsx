@@ -1,5 +1,5 @@
-import GenresSection from "../../../components/pages/genres/GenresSection";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import GenresSection from "@/components/pages/genres/GenresSection";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

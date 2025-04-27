@@ -1,5 +1,5 @@
-import Checkout from "../../../components/pages/checkout/Checkout";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import Checkout from "@/components/pages/checkout/Checkout";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

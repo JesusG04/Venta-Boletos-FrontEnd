@@ -1,5 +1,5 @@
-import CommonDetails from "../../../components/pages/album-details/CommonDetails";
-import ConveterHead from "../../../components/pages/album-details/ConveterHead";
+import CommonDetails from "@/components/pages/album-details/CommonDetails";
+import ConveterHead from "@/components/pages/album-details/ConveterHead";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

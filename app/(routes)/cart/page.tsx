@@ -1,5 +1,5 @@
-import ProductDetails from "../../../components/pages/cart/ProductDetails";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import ProductDetails from "@/components/pages/cart/ProductDetails";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

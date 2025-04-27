@@ -1,5 +1,5 @@
-import ContactSection from "../../../components/pages/contact/ContactSection";
-import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
+import ContactSection from "@/components/pages/contact/ContactSection";
+import BreadCrumSingle from "@/components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

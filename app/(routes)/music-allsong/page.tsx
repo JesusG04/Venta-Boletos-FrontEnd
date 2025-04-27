@@ -1,4 +1,4 @@
-import { topSongData } from "@/../public/data/topSongData";
+import { topSongData } from "@/public/data/topSongData";
 import PopularAlbums from "../../../components/pages/albums/PopularAlbums";
 import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
 import { Metadata } from "next";
