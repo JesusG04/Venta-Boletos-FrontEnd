@@ -1,7 +1,6 @@
 "use client";
 import { sideBarData } from "@/public/data/navBarData";
 import { RootState } from "../../redux/store";
-import { handleLinkClick } from "@/src/utils/handleLinkClick";
 import { navbarContext } from "@/src/utils/reactContext";
 import {
   IconBell,
