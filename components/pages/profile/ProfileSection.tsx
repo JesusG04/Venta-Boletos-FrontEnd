@@ -1,7 +1,7 @@
 "use client"
 
-import { songUpgradeData } from "@/public/data/songUpgrdeData";
-import { weeklytopTrackData } from "@/public/data/weeklyTopTracksData";
+// import { songUpgradeData } from "@/public/data/songUpgrdeData";
+// import { weeklytopTrackData } from "@/public/data/weeklyTopTracksData";
 import {
   IconGenderFemale,
   IconShare3,

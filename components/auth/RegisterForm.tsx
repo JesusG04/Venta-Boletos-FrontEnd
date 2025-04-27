@@ -71,6 +71,8 @@ const RegisterForm = () => {
             router.push('/form-register')
 
           } catch (error) {
+            console.log(error);
+            
             toast.error('Error al Inicar Sesión', {
               theme: "colored",
               closeOnClick: true,
@@ -84,11 +86,10 @@ const RegisterForm = () => {
     }
 
     handleEffect();
-  }, [state])
+  }, [state, formData, router])
 
 
   return (
-
     <form
       noValidate
       className="cover__form"

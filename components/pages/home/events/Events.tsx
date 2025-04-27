@@ -1,5 +1,5 @@
 "use client";
-import { eventsCardData } from "@/public/data/eventsData";
+
 import {
   IconArrowNarrowRight,
   IconChevronLeft,

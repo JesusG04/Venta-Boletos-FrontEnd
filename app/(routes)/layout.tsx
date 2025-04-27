@@ -8,7 +8,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error Descripción
     import("bootstrap/dist/js/bootstrap");
   }, []);
   return (

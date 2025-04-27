@@ -27,7 +27,7 @@ const Banner = () => {
                 }}
                 thumbs={{
                   swiper:
-                   //@ts-expect-error
+                   // @ts-expect-error Explicación por qué es necesario
                     thumbsSwiper && !thumbsSwiper.destroyed
                       ? thumbsSwiper
                       : null,
@@ -129,7 +129,7 @@ const Banner = () => {
           <div className="col-lg-5">
             <div className="swiper mySwiper1">
               <Swiper
-                //@ts-expect-error
+                // @ts-expect-error Explicación por qué es necesario
                 onSwiper={setThumbsSwiper}
                 modules={[FreeMode]}
                 loop={true}

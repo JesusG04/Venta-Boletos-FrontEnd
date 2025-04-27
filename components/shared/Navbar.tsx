@@ -23,9 +23,9 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(navbarContext);
   // const [isSubDropDownOpen, setSubDropDownOpen] = useState(false);
-  const [isSubMenuOpen, setSubMenuOpen] = useState<string | null>(
-    sideBarData[0].id
-  );
+  // const [isSubMenuOpen, setSubMenuOpen] = useState<string | null>(
+  //   sideBarData[0].id
+  // );
   const router = useRouter();
   const pathName = usePathname();
   const { quantity } = useSelector((state: RootState) => state.cart.value);
@@ -38,6 +38,7 @@ const Navbar = () => {
       setLoading(!loading);
       router.push("/");
     } catch (error) {
+      console.log(error);
       toast.error('Error Al cerrar sesión', {
         theme: "colored",
         closeOnClick: true,
@@ -93,7 +94,7 @@ const Navbar = () => {
 
                         <li key={id} onClick={() => setIsSidebarOpen(false)}>
                           <Link
-                            onClick={() => setSubMenuOpen(null)}
+                            // onClick={() => setSubMenuOpen(null)}
                             href={path}
                             className={`d-flex hcolor align-items-center gap-2 ${pathName === path ? "navbar-item-active" : ""
                               }`}

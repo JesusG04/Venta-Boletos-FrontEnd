@@ -141,7 +141,6 @@ const FormDataUser = () => {
           setUser(auth.currentUser);
         } catch (error) {
           console.log(error);
-
         }
         //Reiniciar Formulario
         // Si tienes algo como:
@@ -158,6 +157,7 @@ const FormDataUser = () => {
       }
 
     } catch (error) {
+      console.log(error);
       toast.error("Hubo un error al subir la imagen.", {
         theme: 'dark',
         closeOnClick: true,
