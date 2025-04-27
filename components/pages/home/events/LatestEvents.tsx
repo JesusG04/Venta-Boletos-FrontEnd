@@ -7,7 +7,7 @@ const LatestEvents = async () => {
 
   //Consultamos lo eventos mas recientes
   //Consultar los eventos destacados
-
+try {
   const url = `${process.env.API_NITEO_URL}/events`;
 
   //Hacemos la peticion
@@ -48,6 +48,12 @@ const LatestEvents = async () => {
       </div>
     </section>
   );
+} catch (error) {
+  console.error("Error al obtener eventos:", error);
+    // Puedes mostrar un mensaje de error o retornar algo por defecto si la API falla
+    return <div>Error al cargar los eventos. Intenta nuevamente más tarde.</div>;
+}
+
 };
 
 export default LatestEvents;

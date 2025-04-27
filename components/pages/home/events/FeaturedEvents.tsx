@@ -7,7 +7,7 @@ import { EventMapSchema } from "@/src/schemas";
 const FeaturedEvents = async () => {
 
   //Consultar los eventos destacados
-
+try {
   const url = `${process.env.API_NITEO_URL}/events`;
 
   //Hacemos la peticion
@@ -58,6 +58,11 @@ const FeaturedEvents = async () => {
       </div>
     </section>
   );
+} catch (error) {
+  console.error("Error al obtener eventos:", error);
+  return <div>Error al cargar los eventos. Intenta nuevamente más tarde.</div>;
+}
+  
 };
 
 export default FeaturedEvents;
