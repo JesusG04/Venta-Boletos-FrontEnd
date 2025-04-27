@@ -3,11 +3,12 @@ import { IconMinus, IconPlus } from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SetStateAction } from "react";
+import { ReactNode } from "react";
 
 type Props = {
   id: string;
   className?: string;
-  icon: any;
+  icon: ReactNode;
   menuTitle: string;
   isActive: boolean | undefined;
   isSubMenuOpen: string;

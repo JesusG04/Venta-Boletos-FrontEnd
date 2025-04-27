@@ -1,5 +1,4 @@
 import RegisterForm from "@/components/auth/RegisterForm";
-import { useEffect, useState } from "react";
 
 const SignUpForm = () => {
 

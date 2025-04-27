@@ -3,7 +3,6 @@ import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-//@ts-ignore
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css/thumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,7 +27,7 @@ const Banner = () => {
                 }}
                 thumbs={{
                   swiper:
-                    //@ts-ignore
+                   //@ts-expect-error
                     thumbsSwiper && !thumbsSwiper.destroyed
                       ? thumbsSwiper
                       : null,
@@ -130,7 +129,7 @@ const Banner = () => {
           <div className="col-lg-5">
             <div className="swiper mySwiper1">
               <Swiper
-                //@ts-ignore
+                //@ts-expect-error
                 onSwiper={setThumbsSwiper}
                 modules={[FreeMode]}
                 loop={true}

@@ -7,10 +7,9 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-//@ts-ignore
 import { Navigation, Scrollbar } from "swiper/modules";
 import EventsSliderCard from "./EventsSliderCard";
-import { MapaEventos, EventMapSchema } from "@/src/schemas";
+import { MapaEventos } from "@/src/schemas";
 
 
 interface Props {

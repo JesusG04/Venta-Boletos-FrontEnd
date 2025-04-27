@@ -19,13 +19,13 @@ const PublicRouter = ({ children }: { children: React.ReactNode }) => {
                 if (customClaim) {
                     router.push('/');
                 }
-                
+
             } else {
                 router.push('/');
             }
         }
         checkUser();
-    }, [user, loading]);
+    }, [user, loading, router]);
     return <>{children}</>;
 }
 export default PublicRouter

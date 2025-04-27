@@ -1,12 +1,12 @@
 "use client"
-import { exploreSectionData } from "@/public/data/exploreSectionData";
+
 import { songUpgradeData } from "@/public/data/songUpgrdeData";
 import { weeklytopTrackData } from "@/public/data/weeklyTopTracksData";
 import {
   IconGenderFemale,
   IconShare3,
   IconPhone,
-  IconMail,
+  // IconMail,
   IconCalendar,
   IconGenderBigender,
   IconEdit
@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import useAuth from "@/hooks/useAuth";
+
 
 const ProfileSection = () => {
 
@@ -206,7 +207,7 @@ const ProfileSection = () => {
                     <div className="latest__songwrap moods__allsong">
                       <table className="table align-middle align-center w-100">
                         <tbody>
-                          {songUpgradeData
+                          {/* {songUpgradeData
                             .slice(0, 5)
                             .map(({ id, ...props }, index) => (
                               <SongUpgradeTableRow
@@ -214,7 +215,7 @@ const ProfileSection = () => {
                                 {...props}
                                 index={index + 1}
                               />
-                            ))}
+                            ))} */}
                         </tbody>
                       </table>
                       <div className="text-center mt-40">
@@ -279,9 +280,9 @@ const ProfileSection = () => {
                     <div className="weekly__tracks">
                       <h3 className="mb-24 white">Weekly Top Tracks</h3>
                       <ul className="weeklytop__tracks">
-                        {weeklytopTrackData.map(({ id, ...props }) => (
+                        {/* {weeklytopTrackData.map(({ id, ...props }) => (
                           <WeeklyTopTrack key={id} {...props} />
-                        ))}
+                        ))} */}
                       </ul>
                     </div>
                   </div>

@@ -9,7 +9,6 @@ import { formatDate } from '@/utils/Date'
 const FeatureShowRightCard = ({
   bannerEvento,
   nombreEvento,
-  descripcionCorta,
   fechaInicio,
   precio
 

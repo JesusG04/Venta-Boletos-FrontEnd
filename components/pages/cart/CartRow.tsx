@@ -31,6 +31,9 @@ const CartRow = ({
   const [cartItem, setCartItem] = useState(quantity);
   const dispatch = useDispatch();
 
+  console.log(cartItem);
+  
+
   return (
     <tr>
       <td className="thumb__td">

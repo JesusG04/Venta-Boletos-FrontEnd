@@ -55,7 +55,7 @@ const RegisterForm = () => {
 
           try {
             //Iniciamos sesión 
-            const userCredential = await signInWithEmailAndPassword(
+            await signInWithEmailAndPassword(
               auth,
               email,
               password);
