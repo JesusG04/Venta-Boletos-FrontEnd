@@ -1,4 +1,4 @@
-import LatestPost from "@/components/pages/blog/LatestPost";
+// import LatestPost from "@/components/pages/blog/LatestPost";
 import BreadCrumb from "@/components/shared/BreadCrum";
 import { Metadata } from "next";
 
@@ -10,7 +10,7 @@ const blog = () => {
   return (
     <>
       <BreadCrumb page="Latest Post" />
-      <LatestPost />
+      {/* <LatestPost /> */}
     </>
   );
 };

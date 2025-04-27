@@ -1,4 +1,4 @@
-import FeatureShowSection from "../../../components/pages/freature-show/FeatureShowSection";
+// import FeatureShowSection from "../../../components/pages/freature-show/FeatureShowSection";
 import BreadCrumSingle from "../../../components/shared/BreadCrumSingle";
 import { Metadata } from "next";
 
@@ -11,7 +11,7 @@ const FeatureShow = () => {
   return (
     <>
       <BreadCrumSingle page="Show" />
-      <FeatureShowSection />
+      {/* <FeatureShowSection /> */}
     </>
   );
 };

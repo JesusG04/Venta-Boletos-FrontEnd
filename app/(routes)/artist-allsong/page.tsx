@@ -1,6 +1,6 @@
 import { songUpgradeData } from "@/public/data/songUpgrdeData";
-import SongUpgrade from "../../../components/pages/album-allsong/SongUpgrade";
-import Artist from "../../../components/pages/artist-allsong/Artist";
+import SongUpgrade from "@/components/pages/album-allsong/SongUpgrade";
+import Artist from "@/components/pages/artist-allsong/Artist";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

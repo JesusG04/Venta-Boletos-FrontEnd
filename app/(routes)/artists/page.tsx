@@ -1,4 +1,4 @@
-import PopularArtists from "../../../components/pages/artists/PopularArtists";
+// import PopularArtists from "../../../components/pages/artists/PopularArtists";
 import FeaturedShows from "../../../components/pages/home/events/FeaturedEvents";
 import BreadCrumb from "../../../components/shared/BreadCrum";
 import { Metadata } from "next";
@@ -12,7 +12,7 @@ const artists = () => {
   return (
     <>
       <BreadCrumb page="Popular Artists" />
-      <PopularArtists />
+      {/* <PopularArtists /> */}
       <FeaturedShows />
     </>
   );
