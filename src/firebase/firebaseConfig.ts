@@ -36,6 +36,6 @@ if (process.env.NEXT_PUBLIC_FIREBASE_ELECTRO_CULTURE_ENV === 'development') {
   console.log("✅ Firebase emulators connected");
 }
 
-const dataRef = dbRef(database, `projects/${process.env.NEXT_PUBLIC_FIREBASE_ELECTRO_CULTURE_PROJECT_ID_BD}/data`);
+const dataRef = dbRef(database, `projects/proj_ucUXTjKx3tYzGRcq6CtUCb/data`);
 
 export { app, auth, storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, database, dataRef, onValue, get, dbRef, child, createUserWithEmailAndPassword, set, signInWithEmailAndPassword, update };
