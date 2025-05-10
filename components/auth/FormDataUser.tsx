@@ -11,7 +11,6 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FormRegisterSchema } from "@/src/schemas";
-import { updateDataRegister } from "@/actions/register-data-action";
 import { storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, dataRef, child, update, auth } from "@/src/firebase/firebaseConfig";
 
 type UserData = {

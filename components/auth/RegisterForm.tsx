@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useActionState, useState, useEffect } from "react";
+import React, { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "react-toastify";
@@ -15,11 +15,6 @@ const RegisterForm = () => {
   const router = useRouter();
 
   const userRef = child(dataRef, "Usuarios")
-
-  const [state, formAction] = useActionState(register, {
-    errors: [],
-    success: false
-  });
 
   const [formData, setFormData] = useState({
     email: '',

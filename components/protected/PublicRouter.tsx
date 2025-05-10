@@ -1,13 +1,12 @@
 "use client"
-import { useEffect,useState } from "react"
-import { redirect, useRouter } from "next/navigation"
+import { useEffect} from "react"
+import { useRouter } from "next/navigation"
 import useAuth from "@/hooks/useAuth"
 import { getUser } from "@/actions/get-user"
 
 const PublicRouter = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter();
     const { user } = useAuth();
-    const [loading, setLoading] = useState(true); 
     
 
     useEffect(() => {
@@ -23,7 +22,7 @@ const PublicRouter = ({ children }: { children: React.ReactNode }) => {
                 // Si no hay usuario, lo redirigimos al login o página de inicio
                 router.push('/login');
             }
-            setLoading(false);  // Una vez que la redirección se ha realizado, cambiamos el estado de carga
+         // Una vez que la redirección se ha realizado, cambiamos el estado de carga
         };
 
         if (user !== null) {  // Solo ejecutamos si el usuario está definido
