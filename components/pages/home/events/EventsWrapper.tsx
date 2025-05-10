@@ -15,7 +15,10 @@ const EventsWrapper = async () => {
       // Pasar los eventos al componente `Events`
       return <Events data={events} />;
     }
+    console.log('error en la consulta');
   } catch (error) {
+    console.log('error');
+    
     console.error("Error al obtener eventos:", error);
     // Puedes mostrar un mensaje de error o retornar algo por defecto si la API falla
     return <div>Error al cargar los eventos. Intenta nuevamente más tarde.</div>;
