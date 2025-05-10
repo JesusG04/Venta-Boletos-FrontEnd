@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useActionState, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import PasswordField from "@/components/shared/PasswordField";
-import { register } from "@/actions/create-account-action";
 import { auth, dataRef, child, createUserWithEmailAndPassword, updateProfile, set, signInWithEmailAndPassword } from "@/src/firebase/firebaseConfig";
 import { RegisterSchema, userInfo } from "@/src/schemas";
 
