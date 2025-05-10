@@ -12,10 +12,18 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FormRegisterSchema } from "@/src/schemas";
 import { updateDataRegister } from "@/actions/register-data-action";
-import { storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, auth } from "@/src/firebase/firebaseConfig";
+import { storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, dataRef, child, update, auth } from "@/src/firebase/firebaseConfig";
+
+type UserData = {
+  imgPerfil: string;
+  sexo: string;
+  fechaNacimiento: string;
+  telefono: string;
+};
 
 const FormDataUser = () => {
   const router = useRouter();
+  const userRef = child(dataRef, "Usuarios");
   const { user, setUser } = useAuth();
   const [formData, setFormData] = useState({
     sexo: '',
@@ -106,60 +114,108 @@ const FormDataUser = () => {
       // Obtener la URL de la imagen subida
       const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
 
-      //Enviar la peticion al backend
-      if (user) {
-        const authUser = {
-          tokenId: await user.getIdToken(),
-          userId: user.uid
-        };
-
-
-        const userData = {
-          ...formData,
-          imgPerfil: downloadURL
-        }
-
-        const result = await updateDataRegister(userData, authUser);
-
-        if (!result.success) {
-          const errors = result.errors.map(error => error)
-          errors.forEach(error => {
-            toast.error(error, {
-              theme: 'dark',
-              closeOnClick: true,
-              autoClose: 1700
-            })
-          })
-          return;
-        }
-
-        try {
-          //Actualizar la informacion del usuario de manera local
-          await updateProfile(user, {
-            photoURL: userData.imgPerfil
-          })
-          await user.reload();
-          setUser(auth.currentUser);
-        } catch (error) {
-          console.log(error);
-        }
-        //Reiniciar Formulario
-        // Si tienes algo como:
-        setFormData({
-          telefono: '',
-          sexo: '',
-          fechaNacimiento: '',
-        });
-        //Reiniciar la imagen que subio er usuario
-        setImgPerfil('');
-
-        router.push('/')
-
+      //Enviamos la informacion a la bd
+      const userData = {
+        ...registerUpdateData.data,
+        imgPerfil: downloadURL
       }
+
+      await updateDataRegister(userData);
+
+      // if (user) {
+      //   const authUser = {
+      //     tokenId: await user.getIdToken(),
+      //     userId: user.uid
+      //   };
+
+
+      //   const userData = {
+      //     ...formData,
+      //     imgPerfil: downloadURL
+      //   }
+
+      // 
+      //   if (!result.success) {
+      //     const errors = result.errors.map(error => error)
+      //     errors.forEach(error => {
+      //       toast.error(error, {
+      //         theme: 'dark',
+      //         closeOnClick: 
+      //         true,
+      //         autoClose: 1700
+      //       })
+      //     })
+      //     return;
+      //   }
+
+      //   try {
+      //     //Actualizar la informacion del usuario de manera local
+      //     await updateProfile(user, {
+      //       photoURL: userData.imgPerfil
+      //     })
+      //     await user.reload();
+      //     setUser(auth.currentUser);
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      //   //Reiniciar Formulario
+      //   // Si tienes algo como:
+      //   setFormData({
+      //     telefono: '',
+      //     sexo: '',
+      //     fechaNacimiento: '',
+      //   });
+      //   //Reiniciar la imagen que subio er usuario
+      //   setImgPerfil('');
+
+      //   router.push('/')
+
+      // }
 
     } catch (error) {
       console.log(error);
       toast.error("Hubo un error al subir la imagen.", {
+        theme: 'dark',
+        closeOnClick: true,
+        autoClose: 1700
+      });
+    }
+
+  }
+
+  const updateDataRegister = async (userData: UserData) => {
+
+    //Guardamos los datos en la bd
+    if (!user) {
+      return;
+    }
+
+    try {
+
+      await update(child(userRef, user.uid), {
+        userData
+      });
+      //Actualizar la informacion del usuario de manera local
+      await updateProfile(user, {
+        photoURL: userData.imgPerfil
+      })
+      await user.reload();
+      setUser(auth.currentUser);
+      //Reiniciar Formulario
+      // Si tienes algo como:
+      setFormData({
+        telefono: '',
+        sexo: '',
+        fechaNacimiento: '',
+      });
+      //Reiniciar la imagen que subio er usuario
+      setImgPerfil('');
+
+      router.push('/')
+
+    } catch (error) {
+      console.log(error);
+      toast.error("Hubo un error al registrase.", {
         theme: 'dark',
         closeOnClick: true,
         autoClose: 1700
@@ -183,7 +239,7 @@ const FormDataUser = () => {
         <div className="col-lg-12">
           <div className="d-flex flex-column align-items-center">
 
-            <Image 
+            <Image
               src={imgPerfil || 'https://firebasestorage.googleapis.com/v0/b/apphive-inc.appspot.com/o/usersmedia%2FsG4D2Am3Nq6G4diGKs6ojn?alt=media&token=3fabd5b9-9af8-4e34-bc4e-7e1aad99df1e'}
               alt="Img de Perfil"
               className="rounded-circle dropzone-img object-fit-cover"

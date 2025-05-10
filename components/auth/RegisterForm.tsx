@@ -6,24 +6,27 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import PasswordField from "@/components/shared/PasswordField";
 import { register } from "@/actions/create-account-action";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/src/firebase/firebaseConfig";
+import { auth, dataRef, child, createUserWithEmailAndPassword, updateProfile, set, signInWithEmailAndPassword } from "@/src/firebase/firebaseConfig";
+import { RegisterSchema, userInfo } from "@/src/schemas";
 
 
 const RegisterForm = () => {
 
   const router = useRouter();
-  
+
+  const userRef = child(dataRef, "Usuarios")
+
   const [state, formAction] = useActionState(register, {
     errors: [],
     success: false
   });
-  
+
   const [formData, setFormData] = useState({
     email: '',
     name: '',
     password: ''
   })
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -31,69 +34,84 @@ const RegisterForm = () => {
     });
   };
 
-  useEffect(() => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const handleEffect = () => {
+    //Validamos la informacion del usuario
+    const registerData = RegisterSchema.safeParse(formData);
 
-      /**En caso de que haya errores  */
-      if (state.errors) {
-        state.errors.forEach(error => {
-          toast.error(error, {
-            theme: "colored",
-            closeOnClick: true,
-            autoClose: 1500
-          });
-        });
-      }
-
-      // Manejo de éxito
-      if (state.success) {
-
-        const { email, password } = formData;
-
-        const signin = async () => {
-
-          try {
-            //Iniciamos sesión 
-            await signInWithEmailAndPassword(
-              auth,
-              email,
-              password);
-
-            //Reiniciamos el Formulario
-            setFormData({
-              email: '',
-              name: '',
-              password: ''
-            });
-
-            //Redireccionamos al usuario
-            router.push('/form-register')
-
-          } catch (error) {
-            console.log(error);
-            
-            toast.error('Error al Inicar Sesión', {
-              theme: "colored",
-              closeOnClick: true,
-            });
-          }
-
-        }
-
-        signin();
-      }
+    //Validamos los datos del usuario y si hay un error lo mostramos
+    if (!registerData.success) {
+      const errors = registerData.error.errors.map(error => error.message)
+      errors.forEach(error => {
+        toast.error(error, {
+          theme: 'dark',
+          closeOnClick: true,
+          autoClose: 1700
+        })
+      })
+      return;
     }
 
-    handleEffect();
-  }, [state, formData, router])
+    //Creamos el usuario en Firebase, en la Bd e iniciamos sesion de manera local 
+    await createUserFirebase(registerData.data);
+  }
+
+  const createUserFirebase = async (userInfo: userInfo) => {
+    try {
+      //Creamos el usuario
+      const userCredentiales = await createUserWithEmailAndPassword(auth, userInfo.email, userInfo.password);
+      const user = userCredentiales.user
+
+      //Actualizamos el nombre
+      await updateProfile(user, {
+        displayName: userInfo.name
+      });
+
+      //Guardamos los datos en la bd 
+      await set(child(userRef, user.uid), {
+        Nombre: user.displayName,
+        Correo: user.email,
+        Registro: Date.now(),
+        fechaUltimoAcceso: Date.now(),
+        tipoSesion: "Correo",
+        registrado: false
+      });
+
+      //Iniciamos sesion
+      await signInWithEmailAndPassword(
+        auth,
+        userInfo.email,
+        userInfo.password
+      );
+
+      //Reiniciamos el Formulario
+      setFormData({
+        email: '',
+        name: '',
+        password: ''
+      });
+
+      //Redireccionamos al usuario
+      router.push('/form-register');
+
+    } catch (error) {
+      console.log(error);
+
+      toast.error('Error al Inicar Sesión', {
+        theme: 'dark',
+        closeOnClick: true,
+        autoClose: 1700
+      });
+    }
+  }
 
 
   return (
     <form
       noValidate
       className="cover__form"
-      action={formAction}
+      onSubmit={handleSubmit}
     >
 
       {/**Adjuntar el logo cuando este listo */}
@@ -169,7 +187,7 @@ const RegisterForm = () => {
           </p>
 
 
-          <p className=" text-center bodyfont ffs-16 fw-500 bodyfont ">    
+          <p className=" text-center bodyfont ffs-16 fw-500 bodyfont ">
             <Link href="#0" className="base ">
               ¿Olvidaste tu contraseña?
             </Link>

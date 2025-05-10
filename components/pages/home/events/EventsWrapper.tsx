@@ -1,28 +1,20 @@
 import Events from "./Events";
 import { EventMapSchema } from "@/src/schemas";
+import { dataRef, child, get } from "@/src/firebase/firebaseConfig";
 
 const EventsWrapper = async () => {
 
-  // Consulta de datos para mostrar lo evento populares
-  //Consultar a la Api para registrar al usuario
-  
-  const url = `${process.env.API_NITEO_URL}/events/popular`;
+  const eventoRef = child(dataRef, "Evento");
 
   try {
-    const req = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    });
-
-    if (!req.ok) {
-      throw new Error(`Error en la solicitud: ${req.statusText}`);
+    const snapshot = await get(eventoRef);
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      // Parsear los datos usando el esquema de eventos
+      const events = EventMapSchema.parse(data);
+      // Pasar los eventos al componente `Events`
+      return <Events data={events} />;
     }
-    const json = await req.json();
-
-    const events = EventMapSchema.parse(json.data);
-  
-    return <Events data={events} />;
   } catch (error) {
     console.error("Error al obtener eventos:", error);
     // Puedes mostrar un mensaje de error o retornar algo por defecto si la API falla

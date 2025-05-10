@@ -1,6 +1,13 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
-import { getAuth, connectAuthEmulator,updateProfile } from "firebase/auth";  // Si necesitas autenticación
+import { 
+  getAuth, 
+  connectAuthEmulator, 
+  updateProfile,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "firebase/auth";  // Si necesitas autenticación
 import { getStorage, connectStorageEmulator, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";  // Importa Storage
+import { getDatabase, connectDatabaseEmulator, ref as dbRef, onValue, get, child, set, update } from "firebase/database";
 
 
 const firebaseConfig = {
@@ -19,13 +26,16 @@ const app: FirebaseApp = initializeApp(firebaseConfig);
 // Acceder al servicio de autenticación de Firebase
 const auth = getAuth(app);
 const storage = getStorage(app);
-
+const database = getDatabase(app);
 
 // Conexión a emuladores (solo en desarrollo)
 if (process.env.NEXT_PUBLIC_FIREBASE_ELECTRO_CULTURE_ENV === 'development') {
   connectAuthEmulator(auth, "http://localhost:9099");
   connectStorageEmulator(storage, "localhost", 9199);
+  connectDatabaseEmulator(database, 'localhost', 9000)
   console.log("✅ Firebase emulators connected");
 }
 
-export { app, auth, storage, ref, uploadBytesResumable, getDownloadURL, updateProfile };
+const dataRef = dbRef(database, `projects/${process.env.NEXT_PUBLIC_FIREBASE_ELECTRO_CULTURE_PROJECT_ID_BD}/data`);
+
+export { app, auth, storage, ref, uploadBytesResumable, getDownloadURL, updateProfile, database, dataRef, onValue, get, dbRef, child, createUserWithEmailAndPassword, set, signInWithEmailAndPassword, update };

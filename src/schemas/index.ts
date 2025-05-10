@@ -14,6 +14,24 @@ export const RegisterSchema = z.object({
                 .trim()
 })
 
+export const UsuarioSchema = z.object({
+        Correo: z.string().email(),
+        Nombre: z.string().min(1),
+        Registro: z.number(),
+        fechaUltimoAcceso: z.number(),
+        registrado: z.boolean(),
+        tipoSesion: z.string(), // ajusta los valores válidos según tu app
+        // imgPerfil es un string y opcional
+        imgPerfil: z.string().optional(),
+
+        // Campos opcionales sin validaciones adicionales
+        sexo: z.string().optional(),
+        telefono: z.string().optional(),
+        fechaNacimiento: z.string().optional(),
+});
+
+export type userInfo = z.infer<typeof RegisterSchema>;
+
 export const LoginSchema = z.object({
         email: z.string()
                 .min(1, { message: 'El correo es obligatorio' })

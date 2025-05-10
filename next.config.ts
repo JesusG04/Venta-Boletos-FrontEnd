@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
-    domains: ['localhost', 'storage.googleapis.com'], // Permite estos dominios
+    domains: ['localhost', 'firebasestorage.googleapis.com'], // Permite estos dominios
     remotePatterns: [
       {
         protocol: 'http',
