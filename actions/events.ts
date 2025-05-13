@@ -14,7 +14,7 @@ export async function getEvents()  {
                   // Parsear los datos usando el esquema de eventos
             const events = EventMapSchema.parse(data);
 
-            return data;
+            return events;
         }
         return null; // 🔄 antes era `true`
     } catch (error) {
