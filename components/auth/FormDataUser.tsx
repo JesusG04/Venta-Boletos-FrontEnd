@@ -190,9 +190,12 @@ const FormDataUser = () => {
     }
 
     try {
-
+      
       await update(child(userRef, user.uid), {
-        userData
+        "Fecha de Nacimiento":userData.fechaNacimiento,
+        "Telefono": userData.telefono,
+        "registrado": true,
+        "Img de perfil": userData.imgPerfil,
       });
       //Actualizar la informacion del usuario de manera local
       await updateProfile(user, {
