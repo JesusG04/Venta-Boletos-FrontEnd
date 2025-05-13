@@ -32,7 +32,7 @@ const database = getDatabase(app);
 if (process.env.NEXT_PUBLIC_FIREBASE_ELECTRO_CULTURE_ENV === 'development') {
   connectAuthEmulator(auth, "http://localhost:9099");
   connectStorageEmulator(storage, "localhost", 9199);
-  // connectDatabaseEmulator(database, 'localhost', 9000)
+  connectDatabaseEmulator(database, 'localhost', 9000)
   console.log("✅ Firebase emulators connected");
 }
 
