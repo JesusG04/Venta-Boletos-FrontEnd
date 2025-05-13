@@ -21,5 +21,4 @@ export async function getEvents()  {
         console.error("Error al obtener eventos:", error);
         return null; // 🔄 antes era `true`
     }
-
 }
